@@ -706,13 +706,93 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CleanHelperExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-KL-RSA">
+                                <rect key="frame" x="32" y="16" width="416" height="100"/>
+                                <clipView key="contentView" drawsBackground="NO" id="IYr-gB-9XL">
+                                    <rect key="frame" x="0.0" y="0.0" width="401" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="D48-I3-xI9">
+                                            <rect key="frame" x="0.0" y="0.0" width="401" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="401" height="100"/>
+                                            <size key="maxSize" width="416" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="Install Instructions   ">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">- Open System Preferences
+- Select 'Extensions'
+- Select 'Xcode Source Editor'
+- Enable Clean Helper</string>
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="OUO-nZ-2Kd">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="hdE-ue-aoK">
+                                    <rect key="frame" x="401" y="0.0" width="15" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PYD-lS-EAE">
+                                <rect key="frame" x="178" y="156" width="124" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ejS-JK-Obi"/>
+                                    <constraint firstAttribute="width" constant="124" id="oa0-nz-NiI"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="appIcon" id="wW0-e1-YfR"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v8k-QQ-Mx3">
+                                <rect key="frame" x="198" y="132" width="85" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Clean Helper" id="kv2-2d-Zgn">
+                                    <font key="font" metaFont="systemMedium" size="13"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="v8k-QQ-Mx3" firstAttribute="top" secondItem="PYD-lS-EAE" secondAttribute="bottom" constant="8" id="2dq-36-Q0v"/>
+                            <constraint firstItem="v8k-QQ-Mx3" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="O7u-mP-mRS"/>
+                            <constraint firstItem="PYD-lS-EAE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="d9M-8S-0zk"/>
+                            <constraint firstItem="PYD-lS-EAE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="q0g-at-CeC"/>
+                            <constraint firstItem="xDz-KL-RSA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="q1O-t8-Epa"/>
+                            <constraint firstAttribute="bottom" secondItem="xDz-KL-RSA" secondAttribute="bottom" constant="16" id="ujB-KR-ehm"/>
+                            <constraint firstItem="xDz-KL-RSA" firstAttribute="top" secondItem="v8k-QQ-Mx3" secondAttribute="bottom" constant="16" id="yUY-kD-SPB"/>
+                            <constraint firstAttribute="trailing" secondItem="xDz-KL-RSA" secondAttribute="trailing" constant="32" id="zcg-1N-gal"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="D48-I3-xI9" id="L4g-DM-83b"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appIcon" width="1024" height="1024"/>
+    </resources>
 </document>
