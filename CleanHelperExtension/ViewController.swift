@@ -9,18 +9,19 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet private var textView: NSTextView!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		textView.isSelectable = false
+		textView.isEditable = false
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
+	
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		self.view.window?.styleMask.remove(NSWindow.StyleMask.resizable)
+		self.view.window?.title = "Clean Helper"
+	}
 }
 
