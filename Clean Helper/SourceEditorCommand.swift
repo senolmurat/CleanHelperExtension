@@ -53,10 +53,14 @@ final class IsCalledGenerator: NSObject, XCSourceEditorCommand {
                     continue
                 }
                 
-                invocation.buffer.lines.insert("    var \(funcName)IsCalled: Bool = false", at: i + lineOffset + instertedLineCount)
+                invocation.buffer.lines.insert("\tvar \(funcName)IsCalled: Bool = false", at: i + lineOffset + instertedLineCount)
                 instertedLineCount += 1
-                invocation.buffer.lines.insert("    \(funcName)IsCalled = true", at: i + 2 + lineOffset + instertedLineCount)
+                invocation.buffer.lines.insert("\t\t\(funcName)IsCalled = true", at: i + 2 + lineOffset + instertedLineCount)
                 instertedLineCount += 1
+				
+				// TODO: deff can be improved , right now just deleting a single line as expecting only < #code# > in function decleration
+				invocation.buffer.lines.removeObject(at: i + lineOffset + instertedLineCount)
+				instertedLineCount -= 1
             }
         }
         
